@@ -1,6 +1,6 @@
 package es.neesis.annotations.applications;
 
-import es.neesis.annotations.services.CalculatorService;
+import es.neesis.annotations.services.ICalculatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -8,9 +8,9 @@ import org.springframework.stereotype.Component;
 public class CalculatorApplication {
 
     @Autowired
-    private CalculatorService calculatorService;
+    private ICalculatorService calculatorService;
 
-    public void startCalculator(){
-        this.calculatorService.startCalculator();
+    public double startCalculator( int choice, double operand1, double operand2){
+        return this.calculatorService.startCalculator(choice,operand1,operand2);
     }
 }
